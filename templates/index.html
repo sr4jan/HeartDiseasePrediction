@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Disease Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Heart Disease Prediction</h1>
+    <form method="POST">
+      <label for="age">Age:</label>
+      <input type="number" step="any" id="age" name="age" required>
+
+      <label for="sex">Sex:</label>
+      <select id="sex" name="sex" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="dataset">Dataset:</label>
+      <input type="text" id="dataset" name="dataset" value="Cleveland" required>
+
+      <label for="cp">Chest Pain Type (cp):</label>
+      <input type="text" id="cp" name="cp" required>
+
+      <label for="trestbps">Resting Blood Pressure (trestbps):</label>
+      <input type="number" step="any" id="trestbps" name="trestbps" required>
+
+      <label for="chol">Cholesterol (chol):</label>
+      <input type="number" step="any" id="chol" name="chol" required>
+
+      <label for="fbs">Fasting Blood Sugar (fbs):</label>
+      <input type="text" id="fbs" name="fbs" required>
+
+      <label for="restecg">Resting ECG (restecg):</label>
+      <input type="text" id="restecg" name="restecg" required>
+
+      <label for="thalch">Max Heart Rate (thalch):</label>
+      <input type="number" step="any" id="thalch" name="thalch" required>
+
+      <label for="exang">Exercise-induced Angina (exang):</label>
+      <input type="text" id="exang" name="exang" required>
+
+      <label for="oldpeak">Oldpeak:</label>
+      <input type="number" step="any" id="oldpeak" name="oldpeak" required>
+
+      <label for="slope">Slope:</label>
+      <input type="text" id="slope" name="slope" required>
+
+      <label for="ca">Number of Major Vessels (ca):</label>
+      <input type="number" step="any" id="ca" name="ca" required>
+
+      <label for="thal">Thal:</label>
+      <input type="text" id="thal" name="thal" required>
+
+      <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+    <div class="result">
+      <h2>Prediction: {{ prediction }}</h2>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
